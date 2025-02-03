@@ -1,0 +1,85 @@
+problems on exception handling
+
+problem1:Custom Exception
+-------------------------
+develop a custom exception class named InvalidAgeException to handle situations where age is less than 0 or greater than 150
+Requirements:
+use a custom exception class(InvalidAgeException)
+Hnadle situations where age is invalid
+Operations to perform:
+Check if age is with in a valid range 
+Throw InvalidAgeException if the age is invalid
+Code Stub:
+public class CustomExceptionExample{
+//code goes here
+}
+sample Input:
+Enter age:-5
+Sample output:
+InvalidAgeExceptiom:Age must be between 0 and 150
+
+=======>>>>code:
+
+import java.util.*;
+
+class InvalidAgeException extends Exception{
+	public InvalidAgeException(String msg) {
+		super(msg);
+		
+	}
+}
+
+public class CustomExceptionExample {
+	public static void checkAge(int age) throws InvalidAgeException{
+		if (age<0 || age>150) {
+			throw new InvalidAgeException("Age must be between 0 and 150.");
+		}
+		System.out.println("Valid age: "+age);
+	}
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.print("Enter age: ");
+		int age=sc.nextInt();
+		try {
+			checkAge(age);
+		}catch (InvalidAgeException e){
+			System.out.println("InvalidAgeException:"+e.getMessage());
+			
+		}
+
+	}
+
+}
+
+
+======================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
